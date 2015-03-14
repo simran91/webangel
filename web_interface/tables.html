@@ -1,0 +1,202 @@
+</form>
+
+<form action="print_table.cgi" method=get>
+
+  <input type=hidden   name="TABLENAME" VALUE="URLTBL">
+  <input type=hidden   name="EXTRA_TABLE" VALUE="SERVERTBL">
+
+  <table border=5 cellpadding=2 width=100%>
+
+  <td> </td>
+  <th align=center colspan=11> URL Table </th>
+  <tr>
+
+  <br>
+
+  <th> Display Columns </th>
+  <td> <input type=checkbox name="ID" value="ID" checked>ID </td>
+  <td> <input type=checkbox name="URL" value="URL" checked>URL </td>
+  <td> <input type=checkbox name="TITLE" value="TITLE" checked>TITLE </td>
+  <td> <input type=checkbox name="COOKIES" value="COOKIES" checked>COOKIES </td>
+  <td> <input type=checkbox name="NUM_LINKS" value="NUM_LINKS" checked>NUM_LINKS </td>
+  <td> <input type=checkbox name="NUM_EMAILS" value="NUM_EMAILS" checked>NUM_EMAILS </td>
+  <td> <input type=checkbox name="NUM_IMAGES" value="NUM_IMAGES" checked>NUM_IMAGES </td>
+  <td> <input type=checkbox name="SERVER_ID" value="SERVER_ID" checked>SERVER_ID </td>
+  <td> <input type=checkbox name="LAST_VISITED" value="LAST_VISITED">LAST_VISITED </td>
+  <td> <input type=checkbox name="RESPONSE_TIME" value="RESPONSE_TIME">RESPONSE_TIME </td>
+  <td> <input type=checkbox name="BASE_PAGE_SIZE" value="BASE_PAGE_SIZE" checked>BASE_PAGE_SIZE </td>
+  <tr>
+  <th> Sort By </th>
+  <td> <input type=radio name="SORTBY" value="ID">ID </td>
+  <td> <input type=radio name="SORTBY" value="URL">URL </td>
+  <td> <input type=radio name="SORTBY" value="TITLE">TITLE </td>
+  <td> <input type=radio name="SORTBY" value="COOKIES">COOKIES </td>
+  <td> <input type=radio name="SORTBY" value="NUM_LINKS">NUM_LINKS </td>
+  <td> <input type=radio name="SORTBY" value="NUM_EMAILS">NUM_EMAILS </td>
+  <td> <input type=radio name="SORTBY" value="NUM_IMAGES">NUM_IMAGES </td>
+  <td> <input type=radio name="SORTBY" value="SERVER_ID">SERVER_ID </td>
+  <td> <input type=radio name="SORTBY" value="LAST_VISITED">LAST_VISITED </td>
+  <td> <input type=radio name="SORTBY" value="RESPONSE_TIME">RESPONSE_TIME </td>
+  <td> <input type=radio name="SORTBY" value="BASE_PAGE_SIZE">BASE_PAGE_SIZE </td>
+  <tr>
+  <th> Calculate </th>
+  <td> <input type=checkbox name="ID_EPOCH_TO_STANDARD" value="1">Creation Time</td>
+  <td> </td>
+  <td> </td>
+  <td> </td>
+  <td> </td>
+  <td> </td>
+  <td> </td>
+  <td> <input type=checkbox name="SERVERTBL.SERVER_TYPE" value="2">ID to TYPE</td>
+  <td> <input type=checkbox name="LV_EPOCH_TO_STANDARD" value="3">Readable Time</td>
+  <td> </td>
+  <td> </td>
+  <tr>
+  <td> </td>
+  <th align=center colspan=11><input type=submit value="Display URL Table" name=submit></th>
+
+ </table>
+
+</form>
+
+
+<form action="print_table.cgi" method=get>
+ 
+  <input type=hidden   name="TABLENAME" VALUE="EMAILTBL">
+
+  <table border=5 cellpadding=2 width=100%>
+  
+  <td> </td>
+  <th align=center colspan=3> Email Table </th> 
+  <tr>
+ 
+  <br>
+ 
+  <th> Display Columns </th>
+  <td> <input type=checkbox name="ID" value="ID" checked>ID </td>
+  <td> <input type=checkbox name="ADDRESS" value="ADDRESS" checked>ADDRESS </td>
+  <td> <input type=checkbox name="VERIFIED_AT" value="VERIFIED_AT" checked>VERIFIED_AT </td>
+  <tr>
+  <th> Sort By </th>
+  <td> <input type=radio name="SORTBY" value="ID">ID </td>
+  <td> <input type=radio name="SORTBY" value="ADDRESS">ADDRESS </td>
+  <td> <input type=radio name="SORTBY" value="VERIFIED_AT">VERIFIED_AT </td>
+  <tr>
+  <th> Calculate </th>
+  <td> <input type=checkbox name="ID_EPOCH_TO_STANDARD" value="1">Creation Time</td>
+  <td> </td> 
+  <td> <input type=checkbox name="VA_EPOCH_TO_STANDARD" value="4">Readable Time</td>
+  <tr>
+  <td> </td>
+  <th align=center colspan=3><input type=submit value="Display Email Table" name=submit></th>
+
+ </table>
+
+</form>
+
+<form action="print_table.cgi" method=get>
+ 
+  <input type=hidden   name="TABLENAME" VALUE="SERVERTBL">
+
+  <table border=5 cellpadding=2 width=100%>
+  
+  <td> </td>
+  <th align=center colspan=3> Server Table </th> 
+  <tr>
+ 
+  <br>
+ 
+  <th> Display Columns </th>
+  <td> <input type=checkbox name="ID" value="ID" checked>ID </td>
+  <td> <input type=checkbox name="SERVER_TYPE" value="SERVER_TYPE" checked>SERVER_TYPE </td>
+  <td> <input type=checkbox name="LAST_ENCOUNTERED" value="LAST_ENCOUNTERED" checked>LAST_ENCOUNTERED </td>
+  <tr>
+  <th> Sort By </th>
+  <td> <input type=radio name="SORTBY" value="ID">ID </td>
+  <td> <input type=radio name="SORTBY" value="SERVER_TYPE">SERVER_TYPE </td>
+  <td> <input type=radio name="SORTBY" value="LAST_ENCOUNTERED">LAST_ENCOUNTERED </td>
+  <tr>
+  <th> Calculate </th>
+  <td> <input type=checkbox name="ID_EPOCH_TO_STANDARD" value="1">Creation Time</td>
+  <td> </td>
+  <td> <input type=checkbox name="LE_EPOCH_TO_STANDARD" value="5">Readable Time</td>
+  <tr>
+  <td> </td>
+  <th align=center colspan=3><input type=submit value="Display Server Table" name=submit></th>
+
+ </table>
+
+</form>
+
+<form action="print_table.cgi" method=get>
+ 
+  <input type=hidden   name="TABLENAME" VALUE="EMAILRELTBL">
+  <input type=hidden   name="EXTRA_TABLE" VALUE="URLTBL">
+  <input type=hidden   name="EXTRA_TABLE" VALUE="EMAILTBL">
+
+  <table border=5 cellpadding=2 width=100%>
+  
+  <td> </td>
+  <th align=center colspan=3> Url<->Email Relationship Table </th> 
+  <tr>
+ 
+  <br>
+ 
+  <th> Display Columns </th>
+  <td> <input type=checkbox name="URL_ID" value="URL_ID" checked>URL_ID </td>
+  <td> <input type=checkbox name="EMAIL_ID" value="EMAIL_ID" checked>EMAIL_ID </td>
+  <td> <input type=checkbox name="VERIFIED_AT" value="VERIFIED_AT" checked>VERIFIED_AT </td>
+  <tr>
+  <th> Sort By </th>
+  <td> <input type=radio name="SORTBY" value="URL_ID">URL_ID </td>
+  <td> <input type=radio name="SORTBY" value="EMAIL_ID">EMAIL_ID </td>
+  <td> <input type=radio name="SORTBY" value="VERIFIED_AT">VERIFIED_AT </td>
+  <tr>
+  <th> Calculate </th>
+  <td> <input type=checkbox name="URLTBL.URL" value="6">ID to URL</td>
+  <td> <input type=checkbox name="EMAILTBL.ADDRESS" value="7">ID to EMAIL</td>
+  <td> <input type=checkbox name="VA_EPOCH_TO_STANDARD" value="4">Readable Time</td>
+  <tr>
+  <td> </td>
+  <th align=center colspan=3><input type=submit value="Display Url<->Email Relationship Table" name=submit></th>
+
+ </table>
+
+</form>
+
+<form action="print_table.cgi" method=get>
+ 
+  <input type=hidden   name="TABLENAME" VALUE="URLRELTBL">
+  <input type=hidden   name="EXTRA_TABLE" VALUE="URLTBL A_URLTBL">
+  <input type=hidden   name="EXTRA_TABLE" VALUE="URLTBL B_URLTBL">
+
+  <table border=5 cellpadding=2 width=100%>
+  
+  <td> </td>
+  <th align=center colspan=3> URL<->URL Relationship Table </th> 
+  <tr>
+ 
+  <br>
+ 
+  <th> Display Columns </th>
+  <td> <input type=checkbox name="URL_A_ID" value="URL_A_ID" checked>URL_A_ID </td>
+  <td> <input type=checkbox name="URL_B_ID" value="URL_B_ID" checked>URL_B_ID </td>
+  <td> <input type=checkbox name="VERIFIED_AT" value="VERIFIED_AT" checked>VERIFIED_AT </td>
+  <tr>
+  <th> Sort By </th>
+  <td> <input type=radio name="SORTBY" value="URL_A_ID">URL_A_ID </td>
+  <td> <input type=radio name="SORTBY" value="URL_B_ID">URL_B_ID </td>
+  <td> <input type=radio name="SORTBY" value="VERIFIED_AT">VERIFIED_AT </td>
+  <tr>
+  <th> Calculate </th>
+  <td> <input type=checkbox name="A_URLTBL.URL" value="8">ID to URL</td>
+  <td> <input type=checkbox name="B_URLTBL.URL" value="9">ID to URL</td>
+  <td> <input type=checkbox name="VA_EPOCH_TO_STANDARD" value="4">Readable Time</td>
+  <tr>
+  <td> </td>
+  <th align=center colspan=3><input type=submit value="Display Url<->Url Relationship Table" name=submit></th>
+
+ </table>
+
+</form>
+

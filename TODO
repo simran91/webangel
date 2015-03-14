@@ -1,0 +1,11 @@
+* Make the web interface look better and give it more flexibility. Somehow give it 
+  the ability to do arbitrary SQL queries without comprimising security. 
+  Also, because currently everything is printed out in one table, sometimes the table
+  can get very large and browsers like Netscape have trouble rendering the table
+  (if not crashing altogether!) 
+ 
+* Iron out some bugs, eg. When the 'TITLE' of a page has '\' as its last character,
+  webangel will not function properly, as it tries to do an:
+		update URLTBL set ... URL = 'Whatever \' 
+  see how that last ' got escaped... because of the \ character...!!! and now will
+  be taken as a literal ' rather than signifying the end of the 'TITLE' field! 

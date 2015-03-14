@@ -1,0 +1,65 @@
+About
+-----
+
+Webangel is a program that was written to collect various types of
+info from the web that i have not currently found accessable
+through search engines out there. 
+
+It collects the following information about all the urls
+it encounteres:
+
+	* The title of the page 
+        * What other links are within the page
+        * How long it took to retrieve the page
+        * What email address's the page contains
+        * What cookies are set if visit the page
+        * How many 'links' to other urls there are in the page! 
+	* What type of server the url is served from (eg. Apache...)
+
+Please mail comments/sugessitions to simran@cse.unsw.edu.au
+
+Requirements
+------------
+
+1. Perl 5.002 or greater with the following modules installed:
+	Socket           # comes with basic perl install
+        FileHandle       # comes with basic perl install
+        POSIX	         # comes with basic perl install
+        Carp             # comes with basic perl install
+        # Pg               # comes with PostgreSQL (no longer 'necessary')
+        HTML::LinkExtor  # get from cpan ( see http://www.perl.com/ )
+	URI::URL	 # get from cpan ( see http://www.perl.com/ )
+        DBD		 # get from cpan ( see http://www.perl.com/ )
+        DBI		 # get from cpan ( see http://www.perl.com/ )
+
+2. Update: PostgresSQL (as below is NOT NECESSARY) you just need a 
+   database. Postgres, MySQL, Oracle, Ingres anything will do as long
+   as it has DBI/DBD perl modules. Just change the $databaseType 
+   variable in the perl engine (currently set to "Pg" for postgres)
+
+-- below kept for historical purposes --
+2. PostgreSQL ( http://www.postgresql.org/ )
+   Please install with perl5 support or if you already have PostgreSQL
+   and just want to install the perl modules, download the postgres
+   source, cd to src/interfaces/perl5 and follow the instructions there. 
+-- above kept for historical purposes --
+
+Getting started
+---------------
+
+1. Create a database called "webangel"
+   (% createdb webangel) (if using postgres)
+   - if you get a permissions error, log in as "postgres" and try again, 
+     or maybe add yourself to the permissions list via 'createuser'
+
+2. Create the talbes as in sql/create_tables.sql 
+   (% psql -f sql/create_tables.sql webangel) (psql if using postgres)
+
+3. Edit the configuration files to suit your needs!
+
+
+Other
+-----
+
+* Deleting a DB
+  To delete a db you can use the 'destroydb' command. (if using postgres)

@@ -1,0 +1,3 @@
+destroydb webangel
+createdb webangel
+psql webangel -f create_tables.sql

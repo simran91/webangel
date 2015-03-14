@@ -1,0 +1,92 @@
+# Configuration file for WebAngel
+
+# Anything after a '#' character on a line is taken as a comment.
+# Blank lines are also ignored. 
+
+dbname:			webangel	# database name
+
+connection_timeout:	12		# if we cannot connect to a remote host within
+					# 'connection_timeout' seconds then give up!
+
+data_timeout:		30		# if a remote host does not respond to our GET 
+					# request within 'data_timeout' seconds then 
+					# give up! 
+
+expired_after:		604800		# urls will not be revisited if they are less than
+					# 'expired_after' seconds old!
+                                        # (604800 seconds = 7 days!)
+
+maxdepth:		7		# if a URL seems to be going into more than 
+					# 'maxdepth' directories deep then ignore url. 
+					# Important as it can avoid problems caused by a
+					# circular symlinks.
+
+proxy:			wproxy:8080	# OPTIONAL
+					# specify proxy server if needed. 
+
+maxforks:		5		# define the maximum number of children processes
+					# that may be launched by a webangel.pl process. 
+
+weblog:			/home/simran/webangel/logs/webangel.log	# OPTIONAL
+								# specifiy where webangel logs to about what it is 
+								# doing with URLs
+
+dblog:			/home/simran/webangel/logs/angeldb.log	# OPTIONAL
+								# specify where webangel logs to about what when it is
+								# inserting/deleting/accessing the db. 
+
+
+#####################################################################################################
+# Inclusions - only traverse URL's that match an inclusion rule!
+# The 'include' tag defines patters that we should look for within URL's, and if no pattern matches
+# we will not traverse the URL and try to extract info from it (like other URLs)
+# Format is 'include:	pattern' - where 'pattern' is a valid perl5 pattern (matches against
+# 'pattern' will not be case sensitive)
+
+# include:		^http://localhost/~simran/	# only get real info for urls that start 
+							# with http://localhost/~simran/
+# include:		^http://localhost/~testuser/	# or http://localhost/~testuser/
+
+# include:		^http://age.web.fairfax.com.au/
+# include:		^http://smh.web.fairfax.com.au/
+
+# include:		^http://www.fairfax.com.au/
+# include:		^http://localhost/~simran/
+# include:		^http://www.unimelb.edu.au/
+
+
+#####################################################################################################
+# Exclusions - do not travesrse URL's if they match an exclusion rule (even if they matched
+#              an inclusion rule - ie. exclusions have higher priority!)
+# The 'exclude' tag defines patters that we should look for within URL's, and if they match,
+# we will not traverse the URL and try to extract info from it (like other URLs)
+# Format is 'exclude:	pattern' - where 'pattern' is a valid perl5 pattern (matches against
+# 'pattern' will not be case sensitive)
+
+#exclude:		/cgi-bin/	# Anything under a cgi bin directory!
+
+exclude:		RealMedia	# realmedia ads
+exclude:		netGravity	# netgravity ads
+exclude:		^http://ads\.	# any url that starts with http://ads.
+exclude:		\.gif$		# ignore images
+exclude:		\.jpg$		# ignore images
+exclude:		\.ps$		# ignore postscript files
+exclude:		images		# ignore anything with the word images in it! 
+exclude:		\.wrd$		# word documents!
+exclude:		\.map$		# imagemap files ? 
+
+
+
+#####################################################################################################
+# Tables - some database tables are optional! 
+# If you do not wish to check on linkages between urls/links and urls/emails then you may wish to 
+# to exclude some/all of the tables listed below. This can enormously speed things up, but of course
+# if you want the info, don't comment them out :-) 
+
+# uncomment/comment out the table lines you need or don't need.
+#                 emailreltbl - means we will keep a url<->email relation table
+#		  urlreltbl   - means we will keep any url<->link relation table
+# 
+
+table:			emailreltbl
+# table:			urlreltbl
